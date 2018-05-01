@@ -1,0 +1,18 @@
+
+/*you can add global styles  to this file , and also import other styles files */
+.header{
+
+    background-color:#0f2d51;
+    display: block;
+    padding: 3%;
+    color: white;
+    font-size: 26px;
+}
+.hi{
+    background-color: #219dec;
+    
+}
+#now{
+color:white;
+font-weight: 600;
+}

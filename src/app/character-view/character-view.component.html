@@ -1,0 +1,35 @@
+
+  <div class="container-fluid margin" *ngIf="currentCharacter" >
+    <div class="row ">
+      <div class="col-12">
+        <h1>Character details </h1>
+        <br>
+        <p class="book">Name: {{currentCharacter.name?currentCharacter.name:'Not Available'}}</p>
+        <hr>
+        <p class="book">Gender: {{currentCharacter.gender}}</p>
+        <hr>
+        
+        <p class="book">Born: {{currentCharacter.culture?currentCharacter.culture:'Not Available'}}</p>
+        
+        <hr>
+        
+        <p *ngIf="currentCharacter.aliases.length>0">aliases : <span *ngFor="let aliase of currentCharacter.aliases;let first=first;let last=last">{{aliase}}{{last ? '' : ', '}}</span></p>
+      
+        <hr>
+        
+        <p *ngIf="currentCharacter.playedBy.length>0" class="book">Played: <span *ngFor="let play of currentCharacter.playedBy;let first=first;let last=last">{{play?play:'Not Available'}}{{last ? '' : ', '}}</span></p>
+      
+        <hr>
+        <p *ngIf="currentCharacter.tvSeries.length>0" class="book">Tv series: <span *ngFor="let tv of currentCharacter.tvSeries;let first=first;let last=last">{{tv?tv:'Not Available'}}{{last ? '' : ', '}}</span></p>
+        
+      <hr>
+      
+    
+            <a class="btn btn-warning fun" (click)="goBackToPreviousPage()">Go Back </a>
+          
+        
+        
+        </div>
+        </div>
+        </div>
+       

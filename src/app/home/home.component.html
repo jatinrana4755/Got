@@ -1,0 +1,87 @@
+<div class="container" style="text-align:center">
+  <div class="form-group">
+
+    <span class="like">Search Name Here:</span>
+    <input class="form-control no" type="text" [(ngModel)]="search" placeholder="Search...">
+
+  </div>
+
+  <div class="row" style="text-align:center" *ngIf="allData.length>0">
+    <!--iterative divs start here-->
+    <div *ngFor="let data of allData | filter:search" class="col-md-6">
+
+      <div class="col-md-12" *ngIf="data.isbn ">
+        <div class="panel panel-default border ">
+          <div class="panel-heading color border">Book Card</div>
+
+          <div class="panel-body">
+
+            <p>Book Name: {{data.name}}</p>
+
+            <p>Written By {{data.publisher }}
+              <br/>
+            </p>
+          </div>
+          <div class="panel-footer  ">
+
+            <a [routerLink]="['/book',getItemId(data)]" class="btn sum">View</a>
+            <br>
+            <br>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="col-md-12" *ngIf="data.gender">
+        <div class="panel panel-default border-one ">
+          <div class="panel-heading color-one ">Character Card</div>
+
+          <div class="panel-body">
+
+
+
+            <p> {{data.name?data.name:data.aliases[0]}}
+              <p>
+          </div>
+
+
+          <div class="panel-footer  ">
+
+            <a [routerLink]="['/character',getItemId(data)]" class="btn btn-primary">View</a>
+            <br>
+            <br>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="col-md-12" *ngIf="data.region || data.coatOfArms">
+        <div class="panel panel-default border-two">
+          <div class="panel-heading color-two border-two">House Card</div>
+
+
+          <div class="panel-body">
+
+            <p>House Name: {{data.name}}</p>
+            <p> Regions: {{data.region}}
+              <br/>
+            </p>
+          </div>
+
+          <div class="panel-footer  ">
+            <a [routerLink]="['/house',getItemId(data)]" class="btn colin">View</a>
+            <br>
+            <br>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--end iterative div-->

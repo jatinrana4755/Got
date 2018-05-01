@@ -1,0 +1,28 @@
+:root{
+    font-size: 16px;
+}
+.nice{
+    padding-left: 5vw;
+}
+
+.size{
+    font-size: 1.8rem;
+    font-weight: 500;
+    
+    
+}
+.small{
+    font-size: 1.6rem;
+    color:#337ab7;
+    font-weight: 700;
+    
+}
+.book{
+    color:#337ab7;
+    font-weight: 600;
+    font-size:1.5rem;
+
+}
+.margin{
+    margin-bottom: 5vh;
+}
